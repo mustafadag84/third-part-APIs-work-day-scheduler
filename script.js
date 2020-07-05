@@ -44,3 +44,17 @@ $(".block8").text(timeBlock8);
 var timeBlock9 = pastTime.add(1, "h");
 timeBlock9 = timeBlock9.format('hh:mm A');
 $(".block9").text(timeBlock9);
+
+function inception(){
+    timeBlock1 = moment().startOf('day').add(9, "hours");
+    currentTime = currentTime.startOf("hour");
+    if(currentTime.isAfter(timeBlock1)){
+        $(".form9").addClass("past");
+    }else if(currentTime.isBefore(timeBlock1)){
+        $(".form9").addClass("future");
+    }else if(currentTime.isSame(timeBlock1)){
+        $(".form9").addClass("present");
+    };
+    
+
+}
