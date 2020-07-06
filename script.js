@@ -1,4 +1,4 @@
-// use the Moment.js library to work with date and time
+// used the Moment.js library to work with date and time
 $("#currentDay").text(moment().format('dddd MMMM Do YYYY, h:mm a'));
 
 var currentTime = moment();
@@ -135,3 +135,20 @@ function inception(){
     };
 
 }
+
+inception();
+console.log(inception)
+
+var h = [9, 10, 11, 12, 1, 2, 3, 4, 5];
+for (var i = 0; i < h.length; i++){
+    var hourData = localStorage.getItem(h[i]);
+    $(".form" + h[i]).val(hourData);
+}
+
+$(".saveBtn").click(function(){
+    event.preventDefault();
+    var formInput = $(this).siblings(".form-control").val();
+    var listInput = $(this).parent().data("hour");
+    localStorage.setItem(listInput,formInput);
+    console.log("@@@@@")   
+})
